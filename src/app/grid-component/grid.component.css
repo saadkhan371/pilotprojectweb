@@ -1,0 +1,39 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  input {
+    width: 225px;
+    margin: 8px 0;
+	font-size:17px;
+}
+button {
+    background-color: #008CBA;
+	color: white;
+}
+.error{
+    color: red;
+    font-size: 20px;
+}
+.success{
+    color: green;
+    font-size: 20px;
+}
+
+.form{
+  border: 1px solid black;
+  width: 50%;
+  margin-top: 5%;
+}

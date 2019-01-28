@@ -1,0 +1,41 @@
+<div>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Create Date</th>
+            <th>Modify Date</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr *ngFor="let user of allUser">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.createdAt}}</td>
+            <td>{{user.modifyAt}}</td>
+            <td>
+                <button type="button" (click)="loadUserToEdit(user.id)">Edit</button>  
+                <button type="button" (click)="deleteUser(user.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="form">
+    <form [formGroup]="userForm" (ngSubmit)="onUserFormSubmit()">
+        <table>
+            <tr>
+                <td>Enter Name</td>
+                <td><input formControlName="name">
+                    <label *ngIf="userForm.get('name').invalid && processValidation" [ngClass]="'error'"> Name is
+                        required. </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button *ngIf="!userIdToUpdate">CREATE</button>
+                    <button *ngIf="userIdToUpdate">UPDATE</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
